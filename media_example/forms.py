@@ -1,4 +1,7 @@
 from django import forms
+from .models import ExampleModel
 
-class UploadForm(forms.Form ):
-    file_upload = forms.ImageField()
+class UploadForm(forms.ModelForm):
+    class Meta:
+        model = ExampleModel
+        fields = "__all__"
